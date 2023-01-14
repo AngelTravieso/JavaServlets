@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <title>Manejo de Formularios</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Manejo de Formularios Servlet</title>
+        <!-- Estilos -->
         <link rel="stylesheet" href="recursos/estilos.css">
-
     </head>
     <body>
-        <form name="form1" action="/ManejoFormulariosHTML/servlet" method="POST">
+        <form class="formulario" name="form1">
             <!-- para ver que tambien podemos enviar informacion "oculta" -->
             <input type="hidden" name="oculto" value="valorOculto" />
 
             <table width="250" id="enfasis-columna">
-                <caption>
+                <caption class="mb-1">
                     Formulario Registro de Datos
                 </caption>
 
@@ -23,7 +24,7 @@
                             <label for="usuario">Usuario: (*)</label>
                         </td>
                         <td class="columna">
-                            <input class="default" id="usuario" type="text" name="usuario" autoComplete="off" placeholder="Escribir usuario" />
+                            <input class="default usuario" id="usuario" type="text" name="usuario" autoComplete="off" placeholder="Escribir usuario" />
                         </td>
                     </tr>
 
@@ -33,7 +34,7 @@
                             <label for="password">Contraseña: (*)</label>
                         </td>
                         <td class="columna">
-                            <input class="default" id="password" type="password" name="password" autoComplete="off" placeholder="Escribir contraseña" />
+                            <input class="default password" id="password" type="password" name="password" autoComplete="off" placeholder="Escribir contraseña" />
                         </td>
                     </tr>
 
@@ -99,8 +100,7 @@
                             Comentarios:
                         </td>
                         <td class="columna">
-                            <textarea name="comentarios" cols="30" rows="2" class="default">
-                            Escribir un texto
+                            <textarea name="comentarios" cols="30" rows="2" class="default">Escribir un texto
                             </textarea>
                         </td>
                     </tr>
@@ -108,17 +108,18 @@
                     <!-- Botones -->
                     <tr style="text-align: center">
                         <td>
-                            <input type="reset" value="Limpiar" class="default" />
+                            <input type="reset" value="Limpiar" class="default btn" />
                         </td>
                         <td>
-                            <input type="submit" value="Enviar" class="default" />
+                            <input type="submit" value="Enviar" class="default btn enviar" />
                         </td>
                     </tr>
 
                 </tbody>
             </table>
         </form>
-
+        
+        <!-- JS -->
         <script src="recursos/funciones.js"></script>
     </body>
 </html>

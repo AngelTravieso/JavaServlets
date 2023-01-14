@@ -5,6 +5,34 @@ body, default {
     color: #669;
 }
 
+/* Generales */
+select[multiple] {
+    width: 16.75rem;
+}
+
+/* Utilitarios */
+.btn {
+    background-color: #669;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: #515179;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
 /* Tabla */
 #enfasis-columna {
     margin: 45px;
