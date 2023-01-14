@@ -21,20 +21,19 @@ public class Servlet extends HttpServlet {
         System.out.println("usuario = " + usuario);
         System.out.println("password = " + password);
 
-        PrintWriter out = res.getWriter();
-
         // agregar codigo HTML a la respuesta (no recomendado con servlets)
-        out.print("<html>");
-        out.print("<body>");
-        out.print("El parametro usuario es: " + usuario);
-        out.print("<br/>");
-        out.print("El parametro password es: " + password);
-        out.print("<br/>");
-        out.print("</body>");
-        out.print("</html>");
-
-        // cierra el objeto printWriter y libera recursos
-        out.close();
+        try (PrintWriter out = res.getWriter()) {
+            // agregar codigo HTML a la respuesta (no recomendado con servlets)
+            out.print("<html>");
+            out.print("<body>");
+            out.print("El parametro usuario es: " + usuario);
+            out.print("<br/>");
+            out.print("El parametro password es: " + password);
+            out.print("<br/>");
+            out.print("</body>");
+            out.print("</html>");
+            // cierra el objeto printWriter y libera recursos
+        }
 
     }
 
