@@ -1,6 +1,3 @@
-
-
-
 // Selectores
 const usuarioInput = document.querySelector(".usuario");
 const passwordInput = document.querySelector(".password");
@@ -9,16 +6,16 @@ const enviarBtn = document.querySelector(".enviar");
 
 
 // Funciones
-const validarForma = e => {
+const validarFormulario = e => {
     // prevenir submit del formulario
     e.preventDefault();
     
     const usuario = formulario.usuario;
     const password = formulario.password;
     const tecnologias = formulario.tecnologia;
-    const checkSeleccionado = false;
+    let checkSeleccionado = false;
     const generos = formulario.genero;
-    const radioSeleccionado = false;
+    let radioSeleccionado = false;
     const ocupacion = formulario.ocupacion;
     
 
@@ -30,6 +27,8 @@ const validarForma = e => {
             icon: "warning",
             confirmButtonText: "Aceptar",
       });
+      
+      
         
         return false;
     }
@@ -98,6 +97,9 @@ const validarForma = e => {
             icon: "success",
             confirmButtonText: "Aceptar",
       });
+      
+      // limpiar formulario
+      formulario.reset();
 
     return true;
 
@@ -106,4 +108,4 @@ const validarForma = e => {
 // Eventos
 
 // Submit del formulario
-formulario.addEventListener("submit", validarForma);
+formulario.addEventListener("submit", validarFormulario);
