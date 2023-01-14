@@ -18,7 +18,7 @@ public class HolaMundo extends HttpServlet {
 
         // Imprimir en el navegador web
         PrintWriter out = res.getWriter();
-        
+
         out.println("Hola Mundo desde Servlets");
     }
 
