@@ -1,10 +1,11 @@
 
+
+
 // Selectores
 const usuarioInput = document.querySelector(".usuario");
 const passwordInput = document.querySelector(".password");
 const formulario = document.querySelector(".formulario");
 const enviarBtn = document.querySelector(".enviar");
-
 
 
 // Funciones
@@ -20,19 +21,28 @@ const validarForma = e => {
     const radioSeleccionado = false;
     const ocupacion = formulario.ocupacion;
     
+
     // validar usuario
     if(usuario.value == "") {
-        alert("Debe proporcionar un nombre de usuario");
-        usuarioInput.focus();
-        usuarioInput.select();
+        Swal.fire({
+            title: "Campo obligatorio",
+            text: "Debe proporcionar un nombre de usuario",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+      });
+        
         return false;
     }
     
+    
     // validar password
     if(password.value == "" || password.value.length < 3){
-        alert("Debe proporcionar una contraseña válida");
-        passwordInput.focus();
-        passwordInput.select();
+        Swal.fire({
+            title: "Campo obligatorio",
+            text: "Debe proporcionar una contraseña válida",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+      });
         return false;
     }
     
@@ -44,7 +54,12 @@ const validarForma = e => {
     }
     
     if(!checkSeleccionado){
-        alert("Debe seleccionar una tecnología");
+        Swal.fire({
+            title: "Campo obligatorio",
+            text: "Debe seleccionar una tecnología",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+      });
         return false;
     }
     
@@ -56,18 +71,34 @@ const validarForma = e => {
     }
     
     if(!radioSeleccionado){
-        alert("Debe seleccionar un genero");
+        Swal.fire({
+            title: "Campo obligatorio",
+            text: "Debe seleccionar un género",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+      });
         return false;
     }
     
     
     if(ocupacion.value == ""){
-        alert("Debe seleccionar una ocupacion");
+        Swal.fire({
+            title: "Campo obligatorio",
+            text: "Debe seleccioanr una ocupación",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+      });
         return false;
     }
     
     //Formulario es valido
-    alert("Formulario valido, enviado datos al servidor");
+    Swal.fire({
+            title: "Registro completado",
+            text: "Formulario enviado exitosamente",
+            icon: "success",
+            confirmButtonText: "Aceptar",
+      });
+
     return true;
 
 }
