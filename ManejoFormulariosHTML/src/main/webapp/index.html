@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="recursos/css/estilos.css" />
     </head>
     <body>
-        <form class="formulario" name="form1" method="POST">
+        <form class="formulario" name="form1" action="/ManejoFormulariosHTML/servlet" method="POST" onsubmit="return validarFormulario(this)">
             <!-- para ver que tambien podemos enviar informacion "oculta" -->
             <input type="hidden" name="oculto" value="valorOculto" />
 
